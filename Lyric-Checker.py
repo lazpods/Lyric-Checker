@@ -1,5 +1,6 @@
 from better_profanity import profanity
 from lyricsgenius import Genius
+import json
 
 # Initialize the profanity filter
 profanity.load_censor_words()
@@ -14,4 +15,6 @@ song_artist = input("Enter song artist: ")
 # Get the lyrics for the song
 song = genius.search_song(song_title, artist=song_artist)
 
-#
+# Save the lyrics to a JSON file
+song.save_lyrics()
+
